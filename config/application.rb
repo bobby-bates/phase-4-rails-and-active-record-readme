@@ -36,5 +36,16 @@ module Phase4RailsAndActiveRecordReadme
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Prevent having to add "--no-test-framework" to every rails g call
+    config.generators.test_framework false
+
+    config.generators do |g|
+      g.test_framework false
+      g.controller_specs false
+      g.view_specs false
+      g.helper_specs false
+      g.model_specs false
+    end
   end
 end
